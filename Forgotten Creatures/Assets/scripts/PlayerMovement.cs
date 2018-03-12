@@ -23,16 +23,28 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Walking(){
 		Quaternion desiredRot;
-		if (isGrounded && Input.GetKey (KeyCode.D)) {
-			rg.velocity = Vector3.right * MoveSpeed * Time.deltaTime;
+		if (Input.GetKey (KeyCode.D)) {
+			rg.velocity = new Vector3(MoveSpeed, rg.velocity.y, 0);
 			desiredRot = Quaternion.Euler (0, 90, 0);
 			transform.rotation = Quaternion.Lerp (transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
 		}
 
-		if (isGrounded && Input.GetKey (KeyCode.A)) {
-			rg.velocity = -Vector3.right * MoveSpeed * Time.deltaTime;
+		if (Input.GetKeyUp(KeyCode.D)) {
+			rg.velocity = new Vector3(0, rg.velocity.y, 0);
+			desiredRot = Quaternion.Euler (0, 90, 0);
+			transform.rotation = desiredRot;
+		}
+
+		if (Input.GetKey (KeyCode.A)) {
+			rg.velocity = new Vector3(-MoveSpeed, rg.velocity.y, 0);
 			desiredRot = Quaternion.Euler (0, -90, 0);
 			transform.rotation = Quaternion.Lerp (transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
+		}
+
+		if (Input.GetKeyUp(KeyCode.A)) {
+			rg.velocity = new Vector3(0, rg.velocity.y, 0);
+			desiredRot = Quaternion.Euler (0, -90, 0);
+			transform.rotation = desiredRot;
 		}
 
 		if (isGrounded && Input.GetKeyDown (KeyCode.Space)) {
