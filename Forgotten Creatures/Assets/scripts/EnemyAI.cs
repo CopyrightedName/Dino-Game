@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour {
 	
 	void Update () {
 		if (agent.hasPath == true) {
-			if (agent.remainingDistance <= agent.stoppingDistance) {
+			if (agent.remainingDistance < agent.stoppingDistance) {
 				agent.SetDestination (target.position);
 			}
 		}
