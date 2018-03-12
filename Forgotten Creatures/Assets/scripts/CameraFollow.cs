@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour {
 	void Start () {
 	}
 	
-	void Update () {
+	void LateUpdate () {
 		transform.position = target.transform.position;
 	}
 }
