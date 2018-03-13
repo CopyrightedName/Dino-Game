@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Transform EnemyTarget;
 	public Text HPtext;
 	public RectTransform rect;
+	public GameObject damageColl;
 
 	[Header("walking")]
 	public float MoveSpeed;
@@ -37,13 +38,16 @@ public class PlayerMovement : MonoBehaviour {
 	bool canMove = true;
 
 	void Start () {
+		damageColl.SetActive (false);
 		stamina = maxStamina;
 		rg = GetComponent<Rigidbody> ();
 		isGrounded = true;
 		HP = maxHP;
+		anim.SetBool ("walking", false);
 	}
 	
 	void Update () {
+		Attack ();
 		Walking ();
 
 		rect.sizeDelta =  Vector2.Lerp (rect.sizeDelta ,new Vector2(HP, rect.sizeDelta.y), 0.1f);
@@ -51,13 +55,15 @@ public class PlayerMovement : MonoBehaviour {
 		HPtext.text = HP.ToString();
 
 		if (isGrounded) {
-			if (rg.IsSleeping ()) {
+			anim.SetBool ("jumping", false);
+			if (!isWalking) {
 				anim.SetBool ("walking", false);
 			} else {
 				anim.SetBool ("walking", true);
 			}		
 		} else {
 			anim.SetBool ("walking", false);
+			anim.SetBool ("jumping", true);
 		}
 
 		if (canIncrease) {
@@ -83,24 +89,31 @@ public class PlayerMovement : MonoBehaviour {
 				rg.velocity = new Vector3 (MoveSpeed, rg.velocity.y, 0);
 				desiredRot = Quaternion.Euler (0, 90, 0);
 				transform.rotation = Quaternion.Lerp (transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
+				isWalking = true;
 			}
 
 			if (Input.GetKeyUp (KeyCode.D)) {
 				rg.velocity = new Vector3 (0, rg.velocity.y, 0);
 				desiredRot = Quaternion.Euler (0, 90, 0);
 				transform.rotation = desiredRot;
+				isWalking = false;
+
 			}
 
 			if (Input.GetKey (KeyCode.A)) {
 				rg.velocity = new Vector3 (-MoveSpeed, rg.velocity.y, 0);
 				desiredRot = Quaternion.Euler (0, -90, 0);
 				transform.rotation = Quaternion.Lerp (transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
+				isWalking = true;
+
 			}
 
 			if (Input.GetKeyUp (KeyCode.A)) {
 				rg.velocity = new Vector3 (0, rg.velocity.y, 0);
 				desiredRot = Quaternion.Euler (0, -90, 0);
 				transform.rotation = desiredRot;
+				isWalking = false;
+
 			}
 
 			if (isGrounded && Input.GetKeyDown (KeyCode.Space)) {
@@ -115,17 +128,34 @@ public class PlayerMovement : MonoBehaviour {
 			}
 
 			if (Input.GetKeyUp (KeyCode.LeftShift)) {
-				MoveSpeed = 10f;
+				MoveSpeed = 15;
 				StartCoroutine (increaseStamina ());
 			}
 
 			if (stamina <= 0) {
-				MoveSpeed = 10f;
+				MoveSpeed = 15;
 			}
 
 			if (stamina >= maxStamina) {
 				canIncrease = false;
 			}
+		}
+	}
+
+	void Attack(){
+		if (Input.GetMouseButtonDown (0)) {
+			anim.SetBool ("attacking", true);
+			anim.SetBool ("walking", false);
+			anim.SetBool ("jumping", false);
+
+			damageColl.SetActive (true);
+		}
+		if (Input.GetMouseButtonUp (0)) {
+			anim.SetBool ("attacking", false);
+			anim.SetBool ("walking", false);
+			anim.SetBool ("jumping", false);
+
+			damageColl.SetActive (false);
 		}
 	}
 
