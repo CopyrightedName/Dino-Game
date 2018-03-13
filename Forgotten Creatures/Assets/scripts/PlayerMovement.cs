@@ -131,15 +131,22 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.gameObject.CompareTag ("enemy")) {
-			HP = HP - HPtoTake;
+		if (other.gameObject.CompareTag ("triceratops")) {
+			HP = HP - 50;
+		}
+		if (other.gameObject.CompareTag ("trex")) {
+			HP = HP - 100;
+		}
+		if (other.gameObject.CompareTag ("compy")) {
+			HP = HP - 10;
 		}
 	}
 
 	void Die(){
+		rg.velocity = Vector3.zero;
 		anim.SetBool ("walking", false);
 		canMove = false;
-		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + 90), rotSpeed);
+		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y + -90, transform.rotation.z + 90), rotSpeed);
 		enemy.GetComponent<EnemyAI> ().agent.SetDestination (EnemyTarget.position);
 	}
 }
