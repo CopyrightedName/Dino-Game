@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour {
 	public Transform EnemyTarget;
 	public Text HPtext;
 	public RectTransform rect;
-	public GameObject damageColl;
 
 	[Header("walking")]
 	public float MoveSpeed;
@@ -38,7 +37,6 @@ public class PlayerMovement : MonoBehaviour {
 	bool canMove = true;
 
 	void Start () {
-		damageColl.SetActive (false);
 		stamina = maxStamina;
 		rg = GetComponent<Rigidbody> ();
 		isGrounded = true;
@@ -47,7 +45,6 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	void Update () {
-		Attack ();
 		Walking ();
 
 		rect.sizeDelta =  Vector2.Lerp (rect.sizeDelta ,new Vector2(HP, rect.sizeDelta.y), 0.1f);
@@ -139,23 +136,6 @@ public class PlayerMovement : MonoBehaviour {
 			if (stamina >= maxStamina) {
 				canIncrease = false;
 			}
-		}
-	}
-
-	void Attack(){
-		if (Input.GetMouseButtonDown (0)) {
-			anim.SetBool ("attacking", true);
-			anim.SetBool ("walking", false);
-			anim.SetBool ("jumping", false);
-
-			damageColl.SetActive (true);
-		}
-		if (Input.GetMouseButtonUp (0)) {
-			anim.SetBool ("attacking", false);
-			anim.SetBool ("walking", false);
-			anim.SetBool ("jumping", false);
-
-			damageColl.SetActive (false);
 		}
 	}
 

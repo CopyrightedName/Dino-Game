@@ -45,9 +45,6 @@ public class EnemyAI : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			agent.SetDestination (target.position);
 		}
-		if (other.gameObject.CompareTag ("damageBox")) {
-			HP = HP - 25;
-		}
 	}
 
 	void OnTriggerExit(Collider other){
