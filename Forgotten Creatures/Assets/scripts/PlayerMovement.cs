@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//awdawdawdds
+
 public class PlayerMovement : MonoBehaviour {
 
 	Rigidbody rg;
