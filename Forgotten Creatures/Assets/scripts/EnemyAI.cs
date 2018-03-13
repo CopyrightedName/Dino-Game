@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour {
 
 	IEnumerator waitToStop(){
 		agent.SetDestination (target.position);
-		yield return new WaitForSeconds (10);
+		yield return new WaitForSeconds (5);
 		agent.ResetPath ();
 	}
 }

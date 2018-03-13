@@ -1,0 +1,740 @@
+fileFormatVersion: 2
+guid: d794ca3a2927c654084c7c4afda3fb74
+timeCreated: 1520952999
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Camera
+    100004: Chest
+    100006: Elbow. L
+    100008: Elbow. R
+    100010: End Tail
+    100012: End Tail_end
+    100014: Foot. L
+    100016: Foot. R
+    100018: Hand. L
+    100020: Hand. L_end
+    100022: Hand. R
+    100024: Hand. R_end
+    100026: Head
+    100028: Hip. L
+    100030: Hip. R
+    100032: Knee. L
+    100034: Knee. R
+    100036: Lower Arm. L
+    100038: Lower Arm. R
+    100040: //RootNode
+    100042: Middle Tail 01
+    100044: Middle Tail 02
+    100046: Middle Tail 03
+    100048: Mouth
+    100050: Mouth_end
+    100052: Neck
+    100054: raptor
+    100056: Spine
+    100058: Spine To Tail
+    100060: Sun
+    100062: Toe. L
+    100064: Toe. L_end
+    100066: Toe. R
+    100068: Toe. R_end
+    100070: Upper Arm. L
+    100072: Upper Arm. R
+    100074: Upper Tail
+    100076: Wrist. L
+    100078: Wrist. R
+    400000: Armature
+    400002: Camera
+    400004: Chest
+    400006: Elbow. L
+    400008: Elbow. R
+    400010: End Tail
+    400012: End Tail_end
+    400014: Foot. L
+    400016: Foot. R
+    400018: Hand. L
+    400020: Hand. L_end
+    400022: Hand. R
+    400024: Hand. R_end
+    400026: Head
+    400028: Hip. L
+    400030: Hip. R
+    400032: Knee. L
+    400034: Knee. R
+    400036: Lower Arm. L
+    400038: Lower Arm. R
+    400040: //RootNode
+    400042: Middle Tail 01
+    400044: Middle Tail 02
+    400046: Middle Tail 03
+    400048: Mouth
+    400050: Mouth_end
+    400052: Neck
+    400054: raptor
+    400056: Spine
+    400058: Spine To Tail
+    400060: Sun
+    400062: Toe. L
+    400064: Toe. L_end
+    400066: Toe. R
+    400068: Toe. R_end
+    400070: Upper Arm. L
+    400072: Upper Arm. R
+    400074: Upper Tail
+    400076: Wrist. L
+    400078: Wrist. R
+    4300000: raptor
+    7400000: Sun|CameraAction
+    7400002: Sun|walk
+    7400004: Camera|CameraAction
+    7400006: Armature|CameraAction
+    7400008: Armature|walk
+    9500000: //RootNode
+    13700000: raptor
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Sun|CameraAction
+      takeName: Sun|CameraAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L/Toe. L_end
+        weight: 1
+      - path: Armature/Hip. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R/Toe. R_end
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L/Hand. L_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R/Hand. R_end
+        weight: 1
+      - path: Armature/Spine To Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail/End Tail_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: raptor
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sun|walk
+      takeName: Sun|walk
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L/Toe. L_end
+        weight: 1
+      - path: Armature/Hip. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R/Toe. R_end
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L/Hand. L_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R/Hand. R_end
+        weight: 1
+      - path: Armature/Spine To Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail/End Tail_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: raptor
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Camera|CameraAction
+      takeName: Camera|CameraAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L/Toe. L_end
+        weight: 1
+      - path: Armature/Hip. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R/Toe. R_end
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L/Hand. L_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R/Hand. R_end
+        weight: 1
+      - path: Armature/Spine To Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail/End Tail_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: raptor
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|CameraAction
+      takeName: Armature|CameraAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L/Toe. L_end
+        weight: 1
+      - path: Armature/Hip. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R/Toe. R_end
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L/Hand. L_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R/Hand. R_end
+        weight: 1
+      - path: Armature/Spine To Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail/End Tail_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: raptor
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|walk
+      takeName: Armature|walk
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L
+        weight: 1
+      - path: Armature/Hip. L/Knee. L/Foot. L/Toe. L/Toe. L_end
+        weight: 1
+      - path: Armature/Hip. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R
+        weight: 1
+      - path: Armature/Hip. R/Knee. R/Foot. R/Toe. R/Toe. R_end
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. L/Elbow. L/Lower Arm. L/Wrist. L/Hand.
+          L/Hand. L_end
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R
+        weight: 1
+      - path: Armature/Spine/Chest/Upper Arm. R/Elbow. R/Lower Arm. R/Wrist. R/Hand.
+          R/Hand. R_end
+        weight: 1
+      - path: Armature/Spine To Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail
+        weight: 1
+      - path: Armature/Spine To Tail/Upper Tail/Middle Tail 01/Middle Tail 02/Middle
+          Tail 03/End Tail/End Tail_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: raptor
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
