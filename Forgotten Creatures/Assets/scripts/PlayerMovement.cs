@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	public GameObject enemy;
 	public Transform EnemyTarget;
 	public Text HPtext;
+	public RectTransform rect;
 
 	[Header("walking")]
 	public float MoveSpeed;
@@ -44,6 +45,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void Update () {
 		Walking ();
+
+		rect.sizeDelta =  Vector2.Lerp (rect.sizeDelta ,new Vector2(HP, rect.sizeDelta.y), 0.1f);
 
 		HPtext.text = HP.ToString();
 
