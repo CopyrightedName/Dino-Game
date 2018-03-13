@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerMovement : MonoBehaviour {
 
 	Rigidbody rg;
@@ -142,7 +141,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Die(){
-		rg.velocity = Vector3.zero;
+		rg.AddForce(Vector3.up * 3f);
 		anim.SetBool ("walking", false);
 		canMove = false;
 		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y + -90, transform.rotation.z + 90), rotSpeed);
