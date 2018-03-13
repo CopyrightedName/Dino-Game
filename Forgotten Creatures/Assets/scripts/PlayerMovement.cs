@@ -13,6 +13,12 @@ public class PlayerMovement : MonoBehaviour {
 	public float rotSpeed;
 	bool isGrounded;
 	bool isWalking;
+
+	[Header("health")]
+
+
+	[Header("sprint")]
+
 	bool canIncrease = false;
 	public float stamina;
 	public float maxStamina;
