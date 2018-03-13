@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float maxHP;
 	public float HP;
-	public float HPtoTake;
 
 	[Header("sprint")]
 
@@ -130,18 +129,17 @@ public class PlayerMovement : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("triceratops")) {
-			HP = HP - 50;
+			HP = HP - 30;
 		}
 		if (other.gameObject.CompareTag ("trex")) {
 			HP = HP - 100;
 		}
 		if (other.gameObject.CompareTag ("compy")) {
-			HP = HP - 10;
+			HP = HP - 5;
 		}
 	}
 
 	void Die(){
-		rg.AddForce(Vector3.up * 3f);
 		anim.SetBool ("walking", false);
 		canMove = false;
 		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y + -90, transform.rotation.z + 90), rotSpeed);
