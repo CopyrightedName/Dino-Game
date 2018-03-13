@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerMovement : MonoBehaviour {
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Animator anim;
 	public GameObject enemy;
 	public Transform EnemyTarget;
+	public Text HPtext;
 
 	[Header("walking")]
 	public float MoveSpeed;
@@ -42,6 +44,8 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		Walking ();
 
+		HPtext.text = HP.ToString();
+
 		if (isGrounded) {
 			if (rg.IsSleeping ()) {
 				anim.SetBool ("walking", false);
@@ -64,6 +68,10 @@ public class PlayerMovement : MonoBehaviour {
 	void Walking(){
 		if (canMove) {
 			stamina = Mathf.Clamp (stamina, 0, maxStamina);
+
+			if (HP < 0) {
+				HP = 0;
+			}
 
 			Quaternion desiredRot;
 
