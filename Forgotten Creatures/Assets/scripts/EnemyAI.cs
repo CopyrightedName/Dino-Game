@@ -26,4 +26,16 @@ public class EnemyAI : MonoBehaviour {
 			agent.SetDestination (target.position);
 		}
 	}
+
+	void OnTriggerExit(Collider other){
+		if (other.gameObject.CompareTag ("Player")) {
+			StartCoroutine (waitToStop());
+		}
+	}
+
+	IEnumerator waitToStop(){
+		agent.SetDestination (target.position);
+		yield return new WaitForSeconds (10);
+		agent.ResetPath ();
+	}
 }
