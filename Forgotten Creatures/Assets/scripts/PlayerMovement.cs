@@ -7,29 +7,38 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	Rigidbody rg;
+	public Animator anim;
+	public GameObject enemy;
+	public Transform EnemyTarget;
+
+	[Header("walking")]
 	public float MoveSpeed;
 	public float sprintSpeed;
 	public float JumpForce;
 	public float rotSpeed;
-	bool isGrounded;
-	bool isWalking;
 
 	[Header("health")]
 
+	public float maxHP;
+	public float HP;
+	public float HPtoTake;
 
 	[Header("sprint")]
 
-	bool canIncrease = false;
 	public float stamina;
 	public float maxStamina;
 	public float staminaToTake;
 
-	public Animator anim;
+	bool canIncrease = false;
+	bool isGrounded;
+	bool isWalking;
+	bool canMove = true;
 
 	void Start () {
 		stamina = maxStamina;
 		rg = GetComponent<Rigidbody> ();
 		isGrounded = true;
+		HP = maxHP;
 	}
 	
 	void Update () {
@@ -48,60 +57,65 @@ public class PlayerMovement : MonoBehaviour {
 		if (canIncrease) {
 			stamina = stamina + 0.5f;
 		}
+
+		if (HP <= 0) {
+			Die ();
+		}
 	}
 
 	void Walking(){
+		if (canMove) {
+			stamina = Mathf.Clamp (stamina, 0, maxStamina);
 
-		stamina = Mathf.Clamp (stamina, 0, maxStamina);
+			Quaternion desiredRot;
 
-		Quaternion desiredRot;
+			if (Input.GetKey (KeyCode.D)) {
+				rg.velocity = new Vector3 (MoveSpeed, rg.velocity.y, 0);
+				desiredRot = Quaternion.Euler (0, 90, 0);
+				transform.rotation = Quaternion.Lerp (transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
+			}
 
-		if (Input.GetKey (KeyCode.D)) {
-			rg.velocity = new Vector3(MoveSpeed, rg.velocity.y, 0);
-			desiredRot = Quaternion.Euler (0, 90, 0);
-			transform.rotation = Quaternion.Lerp (transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
-		}
+			if (Input.GetKeyUp (KeyCode.D)) {
+				rg.velocity = new Vector3 (0, rg.velocity.y, 0);
+				desiredRot = Quaternion.Euler (0, 90, 0);
+				transform.rotation = desiredRot;
+			}
 
-		if (Input.GetKeyUp(KeyCode.D)) {
-			rg.velocity = new Vector3(0, rg.velocity.y, 0);
-			desiredRot = Quaternion.Euler (0, 90, 0);
-			transform.rotation = desiredRot;
-		}
+			if (Input.GetKey (KeyCode.A)) {
+				rg.velocity = new Vector3 (-MoveSpeed, rg.velocity.y, 0);
+				desiredRot = Quaternion.Euler (0, -90, 0);
+				transform.rotation = Quaternion.Lerp (transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
+			}
 
-		if (Input.GetKey (KeyCode.A)) {
-			rg.velocity = new Vector3(-MoveSpeed, rg.velocity.y, 0);
-			desiredRot = Quaternion.Euler (0, -90, 0);
-			transform.rotation = Quaternion.Lerp (transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
-		}
+			if (Input.GetKeyUp (KeyCode.A)) {
+				rg.velocity = new Vector3 (0, rg.velocity.y, 0);
+				desiredRot = Quaternion.Euler (0, -90, 0);
+				transform.rotation = desiredRot;
+			}
 
-		if (Input.GetKeyUp(KeyCode.A)) {
-			rg.velocity = new Vector3(0, rg.velocity.y, 0);
-			desiredRot = Quaternion.Euler (0, -90, 0);
-			transform.rotation = desiredRot;
-		}
+			if (isGrounded && Input.GetKeyDown (KeyCode.Space)) {
+				rg.AddForce (Vector3.up * JumpForce);
+				isGrounded = false;
+			}
 
-		if (isGrounded && Input.GetKeyDown (KeyCode.Space)) {
-			rg.AddForce (Vector3.up * JumpForce);
-			isGrounded = false;
-		}
+			if (stamina >= 0 && Input.GetKey (KeyCode.LeftShift)) {
+				stamina = stamina - staminaToTake;
+				MoveSpeed = sprintSpeed;
+				canIncrease = false;
+			}
 
-		if (stamina >= 0 && Input.GetKey (KeyCode.LeftShift)) {
-			stamina = stamina - staminaToTake;
-			MoveSpeed = sprintSpeed;
-			canIncrease = false;
-		}
+			if (Input.GetKeyUp (KeyCode.LeftShift)) {
+				MoveSpeed = 10f;
+				StartCoroutine (increaseStamina ());
+			}
 
-		if (Input.GetKeyUp(KeyCode.LeftShift)) {
-			MoveSpeed = 10f;
-			StartCoroutine (increaseStamina ());
-		}
+			if (stamina <= 0) {
+				MoveSpeed = 10f;
+			}
 
-		if (stamina <= 0) {
-			MoveSpeed = 10f;
-		}
-
-		if (stamina >= maxStamina) {
-			canIncrease = false;
+			if (stamina >= maxStamina) {
+				canIncrease = false;
+			}
 		}
 	}
 
@@ -114,5 +128,18 @@ public class PlayerMovement : MonoBehaviour {
 		if (other.gameObject.CompareTag ("ground")) {
 			isGrounded = true;
 		}
+	}
+
+	void OnTriggerEnter(Collider other){
+		if (other.gameObject.CompareTag ("enemy")) {
+			HP = HP - HPtoTake;
+		}
+	}
+
+	void Die(){
+		anim.SetBool ("walking", false);
+		canMove = false;
+		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + 90), rotSpeed);
+		enemy.GetComponent<EnemyAI> ().agent.SetDestination (EnemyTarget.position);
 	}
 }
