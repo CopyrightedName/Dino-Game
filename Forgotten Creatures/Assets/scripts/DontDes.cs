@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class DontDes : MonoBehaviour {
 
-	public GameObject lvlPrefab;
+	public GameObject lvlObj;
 
-	void Start () {
-	}
-
-	void Awake(){
+	void Start(){
 		DontDestroyOnLoad (this);
-	}
-	
-	void Update () {
-		Instantiate (lvlPrefab, transform.position, transform.rotation);
+		GameObject lvlPrefab = Instantiate (lvlObj, transform.position, transform.rotation);
+		lvlPrefab.transform.SetParent (this.transform);
 	}
 }
