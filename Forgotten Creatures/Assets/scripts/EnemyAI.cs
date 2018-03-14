@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour {
 	[Header("health")]
 
 	public float maxHP;
-	public float HP;
+	float HP;
 
 	[Header("colors")]
 	public Color green;

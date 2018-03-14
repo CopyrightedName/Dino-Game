@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour {
 	public Animator anim;
 	public GameObject enemy;
 	public Transform EnemyTarget;
-	public Text HPtext;
 	public RectTransform rect;
 
 	[Header("walking")]
@@ -23,11 +22,11 @@ public class PlayerMovement : MonoBehaviour {
 	[Header("health")]
 
 	public float maxHP;
-	public float HP;
+	float HP;
 
 	[Header("sprint")]
 
-	public float stamina;
+	float stamina;
 	public float maxStamina;
 	public float staminaToTake;
 
@@ -54,8 +53,6 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		Walking ();
 		HPbar ();
-
-		HPtext.text = HP.ToString();
 
 		if (isGrounded) {
 			anim.SetBool ("jumping", false);
