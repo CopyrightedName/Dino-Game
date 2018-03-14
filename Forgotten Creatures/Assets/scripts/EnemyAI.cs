@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour {
 	public GameObject coll;
 	public Animator anim;
 	public RectTransform rect;
+	public bool isDead;
 
 	[Header("health")]
 
@@ -35,29 +36,39 @@ public class EnemyAI : MonoBehaviour {
 	
 	void Update () {
 
+		if (isDead) {
+			transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y + 90, transform.rotation.z + 90), 0.5f);
+			agent.enabled = false;
+			target = null;
+			anim.enabled = false;
+		}
+
 		HPbar ();
 		
+		if (isDead == false) {
+			if (agent.hasPath == true) {
+				anim.SetBool ("walking", true);
+			} else {
+				anim.SetBool ("walking", false);
+			}
 
-		if (agent.hasPath == true) {
-			anim.SetBool ("walking", true);
-		} else {
-			anim.SetBool ("walking", false);
-		}
+			if (HP <= 0) {
+				StartCoroutine (Die ());
+			}
 
-		if (HP <= 0) {
-			StartCoroutine (Die ());
-		}
-
-		if (agent.hasPath == true) {
-			if (agent.remainingDistance < agent.stoppingDistance) {
-				agent.SetDestination (target.position);
+			if (agent.hasPath == true) {
+				if (agent.remainingDistance < agent.stoppingDistance) {
+					agent.SetDestination (target.position);
+				}
 			}
 		}
 	}
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("Player")) {
-			agent.SetDestination (target.position);
+			if (!isDead) {
+				agent.SetDestination (target.position);
+			}
 		}
 		if (other.gameObject.CompareTag ("bullet")) {
 			HP = HP - 25;
@@ -101,9 +112,8 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	IEnumerator Die(){
-		agent.enabled = false;
 		Destroy (coll);
-		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y + 90, transform.rotation.z + 90), 0.5f);
+		isDead = true;
 		yield return new WaitForSeconds (4);
 		Destroy (gameObject);
 	}
