@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour {
 	public Transform target;
 	public GameObject coll;
 	public Animator anim;
+	public RectTransform rect;
 
 	[Header("health")]
 
@@ -24,6 +25,8 @@ public class EnemyAI : MonoBehaviour {
 	}
 	
 	void Update () {
+		rect.sizeDelta =  Vector2.Lerp (rect.sizeDelta ,new Vector2(HP / 25, rect.sizeDelta.y), 0.05f);
+
 		if (agent.hasPath == true) {
 			anim.SetBool ("walking", true);
 		} else {
@@ -44,6 +47,9 @@ public class EnemyAI : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("Player")) {
 			agent.SetDestination (target.position);
+		}
+		if (other.gameObject.CompareTag ("bullet")) {
+			HP = HP - 25;
 		}
 	}
 

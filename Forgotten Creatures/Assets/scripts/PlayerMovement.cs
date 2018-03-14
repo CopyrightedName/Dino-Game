@@ -31,6 +31,13 @@ public class PlayerMovement : MonoBehaviour {
 	public float maxStamina;
 	public float staminaToTake;
 
+	[Header("colors")]
+	public Color green;
+	public Color yellow;
+	public Color orange;
+	public Color red;
+	public Color darkRed;
+
 	bool canIncrease = false;
 	bool isGrounded;
 	bool isWalking;
@@ -46,8 +53,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void Update () {
 		Walking ();
-
-		rect.sizeDelta =  Vector2.Lerp (rect.sizeDelta ,new Vector2(HP, rect.sizeDelta.y), 0.1f);
+		HPbar ();
 
 		HPtext.text = HP.ToString();
 
@@ -137,6 +143,30 @@ public class PlayerMovement : MonoBehaviour {
 				canIncrease = false;
 			}
 		}
+	}
+
+	void HPbar(){
+		if (HP == 100) {
+			rect.GetComponent<RawImage> ().color = green;
+		}
+
+		if (HP <= 75) {
+			rect.GetComponent<RawImage> ().color = yellow;
+		}
+
+		if (HP <= 50) {
+			rect.GetComponent<RawImage> ().color = orange;
+		}
+
+		if (HP <= 25) {
+			rect.GetComponent<RawImage> ().color = red;
+		}
+
+		if (HP <= 10) {
+			rect.GetComponent<RawImage> ().color = darkRed;
+		}
+
+		rect.sizeDelta =  Vector2.Lerp (rect.sizeDelta ,new Vector2(HP, rect.sizeDelta.y), 0.1f);
 	}
 
 	IEnumerator increaseStamina(){
