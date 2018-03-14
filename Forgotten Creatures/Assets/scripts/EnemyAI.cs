@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour {
 	public Animator anim;
 	public RectTransform rect;
 	public bool isDead;
+	PlayerMovement playerM;
 
 	[Header("health")]
 
@@ -32,6 +33,7 @@ public class EnemyAI : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		HP = maxHP;
 		agent = GetComponent<NavMeshAgent> ();
+		playerM = FindObjectOfType<PlayerMovement> ();
 	}
 	
 	void Update () {
@@ -45,7 +47,7 @@ public class EnemyAI : MonoBehaviour {
 
 		HPbar ();
 		
-		if (isDead == false) {
+		if (isDead == false && playerM.isDead == false) {
 			if (agent.hasPath == true) {
 				anim.SetBool ("walking", true);
 			} else {
@@ -66,7 +68,7 @@ public class EnemyAI : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("Player")) {
-			if (!isDead) {
+			if (!isDead && playerM.isDead == false) {
 				agent.SetDestination (target.position);
 			}
 		}

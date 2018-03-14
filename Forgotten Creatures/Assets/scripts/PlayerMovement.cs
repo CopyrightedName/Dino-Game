@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 	bool isGrounded;
 	bool isWalking;
 	bool canMove = true;
+	public bool isDead;
 
 	void Start () {
 		stamina = maxStamina;
@@ -48,35 +49,38 @@ public class PlayerMovement : MonoBehaviour {
 		isGrounded = true;
 		HP = maxHP;
 		anim.SetBool ("walking", false);
+
 	}
 	
 	void Update () {
 		Walking ();
 		HPbar ();
 
-		if (isGrounded) {
-			anim.SetBool ("jumping", false);
-			if (!isWalking) {
-				anim.SetBool ("walking", false);
+		if (!isDead) {
+			if (isGrounded) {
+				anim.SetBool ("jumping", false);
+				if (!isWalking) {
+					anim.SetBool ("walking", false);
+				} else {
+					anim.SetBool ("walking", true);
+				}		
 			} else {
-				anim.SetBool ("walking", true);
-			}		
-		} else {
-			anim.SetBool ("walking", false);
-			anim.SetBool ("jumping", true);
-		}
+				anim.SetBool ("walking", false);
+				anim.SetBool ("jumping", true);
+			}
 
-		if (canIncrease) {
-			stamina = stamina + 0.5f;
-		}
+			if (canIncrease) {
+				stamina = stamina + 0.5f;
+			}
 
-		if (HP <= 0) {
-			Die ();
+			if (HP <= 0) {
+				Die ();
+			}
 		}
 	}
 
 	void Walking(){
-		if (canMove) {
+		if (canMove && !isDead) {
 			stamina = Mathf.Clamp (stamina, 0, maxStamina);
 
 			if (HP < 0) {
@@ -190,9 +194,12 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Die(){
-		anim.SetBool ("walking", false);
-		canMove = false;
-		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y + -90, transform.rotation.z + 90), rotSpeed);
-		enemy.GetComponent<EnemyAI> ().agent.SetDestination (EnemyTarget.position);
+		if (!isDead) {
+			isDead = true;
+			anim.SetBool ("walking", false);
+			canMove = false;
+			transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler (transform.rotation.x, transform.rotation.y + -90, transform.rotation.z + 90), rotSpeed);
+			enemy.GetComponent<EnemyAI> ().agent.SetDestination (EnemyTarget.position);
+		}
 	}
 }

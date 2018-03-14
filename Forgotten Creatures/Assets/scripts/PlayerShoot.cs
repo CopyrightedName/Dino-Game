@@ -8,12 +8,16 @@ public class PlayerShoot : MonoBehaviour {
 	public Transform pos1;
 	public Transform pos2;
 
+	PlayerMovement playerM;
+
 	void Start () {
-		
+		playerM = FindObjectOfType<PlayerMovement> ();
 	}
 	
 	void Update () {
-		Shoot ();
+		if (playerM.isDead == false) {
+			Shoot ();
+		}
 	}
 
 	void Shoot(){
