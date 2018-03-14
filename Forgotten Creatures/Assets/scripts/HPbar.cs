@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class HPbar : MonoBehaviour {
 
-	public Transform target;
+	Transform target;
 	EnemyAI AI;
 
 	void Start () {
+		target = FindObjectOfType<EnemyAI> ().transform;
 		AI = FindObjectOfType<EnemyAI> ();
 	}
 	
