@@ -13,7 +13,7 @@ public class PlayerShoot : MonoBehaviour {
 	public int bullets = 64;
 
 	PlayerMovement playerM;
-	bool canShoot = true;
+	public bool canShoot = true;
 
 	void Start () {
 		playerM = FindObjectOfType<PlayerMovement> ();

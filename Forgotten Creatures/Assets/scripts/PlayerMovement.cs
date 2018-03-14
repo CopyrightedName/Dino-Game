@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
-	Rigidbody rg;
+	public Rigidbody rg;
 	public Animator anim;
 	public GameObject enemy;
 	public Transform EnemyTarget;
@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	bool canIncrease = false;
 	bool isGrounded;
-	bool isWalking;
-	bool canMove = true;
+	public bool isWalking;
+	public bool canMove = true;
 	public bool isDead;
 
 	void Start () {
