@@ -20,6 +20,13 @@ public class PlayerShoot : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			GameObject bulletInstance1 = Instantiate (bullet, pos1.position, pos1.transform.rotation);
 			GameObject bulletInstance2 = Instantiate (bullet, pos2.position, pos2.transform.rotation);
+			StartCoroutine (destroyAfterSeconds (bulletInstance1, bulletInstance2));
 		}
+	}
+
+	IEnumerator destroyAfterSeconds(GameObject bul1, GameObject bul2){
+		yield return new WaitForSeconds (2);
+		Destroy (bul1);
+		Destroy (bul2);
 	}
 }
