@@ -191,6 +191,48 @@ public class PlayerMovement : MonoBehaviour {
 		if (other.gameObject.CompareTag ("compy")) {
 			HP = HP - 5;
 		}
+
+
+		if (other.gameObject.CompareTag ("Finish1")) {
+			FindObjectOfType<Map> ().completed [0] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish2")) {
+			FindObjectOfType<Map> ().completed [1] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish3")) {
+			FindObjectOfType<Map> ().completed [2] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish4")) {
+			FindObjectOfType<Map> ().completed [3] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish5")) {
+			FindObjectOfType<Map> ().completed [4] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish6")) {
+			FindObjectOfType<Map> ().completed [5] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish7")) {
+			FindObjectOfType<Map> ().completed [6] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish8")) {
+			FindObjectOfType<Map> ().completed [7] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish9")) {
+			FindObjectOfType<Map> ().completed [8] = true;
+		}
+
+		if (other.gameObject.CompareTag ("Finish10")) {
+			FindObjectOfType<Map> ().completed [9] = true;
+		}
+
 	}
 
 	void Die(){
