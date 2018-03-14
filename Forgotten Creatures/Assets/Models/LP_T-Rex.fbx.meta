@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8ad82696b2081404381b2a37c00f920a
-timeCreated: 1520209347
+guid: 9d489aa6d97d4314c824b44274c54983
+timeCreated: 1521060022
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -76,7 +76,6 @@ ModelImporter:
     2300000: trex
     3300000: trex
     4300000: trex
-    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -93,7 +92,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -135,13 +134,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: Armature
+    rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
