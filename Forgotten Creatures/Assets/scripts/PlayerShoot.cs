@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour {
 
 	public GameObject bullet;
-	public float bulletSpeed;
 	public Transform pos1;
 	public Transform pos2;
 
