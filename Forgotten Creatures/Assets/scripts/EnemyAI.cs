@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+
 
 public class EnemyAI : MonoBehaviour {
 
@@ -17,6 +19,13 @@ public class EnemyAI : MonoBehaviour {
 	public float maxHP;
 	public float HP;
 
+	[Header("colors")]
+	public Color green;
+	public Color yellow;
+	public Color orange;
+	public Color red;
+	public Color darkRed;
+
 
 	void Start () {
 		anim = GetComponent<Animator>();
@@ -25,7 +34,9 @@ public class EnemyAI : MonoBehaviour {
 	}
 	
 	void Update () {
-		rect.sizeDelta =  Vector2.Lerp (rect.sizeDelta ,new Vector2(HP / 25, rect.sizeDelta.y), 0.05f);
+
+		HPbar ();
+		
 
 		if (agent.hasPath == true) {
 			anim.SetBool ("walking", true);
@@ -57,6 +68,30 @@ public class EnemyAI : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			StartCoroutine (waitToStop());
 		}
+	}
+
+	void HPbar(){
+		if (HP == 100) {
+			rect.GetComponent<Image> ().color = green;
+		}
+
+		if (HP <= 75) {
+			rect.GetComponent<Image> ().color = yellow;
+		}
+
+		if (HP <= 50) {
+			rect.GetComponent<Image> ().color = orange;
+		}
+
+		if (HP <= 25) {
+			rect.GetComponent<Image> ().color = red;
+		}
+
+		if (HP <= 10) {
+			rect.GetComponent<Image> ().color = darkRed;
+		}
+
+		rect.sizeDelta =  Vector2.Lerp (rect.sizeDelta ,new Vector2(HP / 25, rect.sizeDelta.y), 0.05f);
 	}
 
 	IEnumerator waitToStop(){
