@@ -18,9 +18,11 @@ public class NodeSceneSwitch : MonoBehaviour {
 		
 	}
 
-	public void OnMouseDown(){
+	public void Click(){
 		if (map.unlocked[nodeNum] == true) {
 			SceneManager.LoadScene (sceneNum, LoadSceneMode.Single);
+			map.mapObj.SetActive (false);
+			map.isOpen = false;
 		}
 	}
 }

@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class DontDes : MonoBehaviour {
 
-	public GameObject lvlObj;
-
 	void Start(){
 		DontDestroyOnLoad (this);
 	}
