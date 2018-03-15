@@ -10,7 +10,5 @@ public class DontDes : MonoBehaviour {
 
 	void Start(){
 		DontDestroyOnLoad (this);
-		GameObject lvlPrefab = Instantiate (lvlObj, transform.position, transform.rotation);
-		lvlPrefab.transform.SetParent (this.transform);
 	}
 }

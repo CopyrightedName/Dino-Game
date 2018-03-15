@@ -7,26 +7,19 @@ public class LevelSwitch : MonoBehaviour {
 
 	Map map;
 
+	bool hasLoaded = false;
+
 	void Start () {
 		map = FindObjectOfType<Map> ();
 	}
 	
 	void Update () {
-		
+
 	}
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("finish")) {
-			StartCoroutine (wait ());
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 		}
-
-	}
-
-	IEnumerator wait(){
-		gameObject.GetComponent<SphereCollider> ().enabled = false;
-		yield return new WaitForSeconds (0.5f);
-		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-		map.completed[0] = true;
-		gameObject.GetComponent<SphereCollider> ().enabled = true;
 	}
 }
